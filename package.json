@@ -2,9 +2,16 @@
   "name": "ghast.js",
   "version": "0.1.0",
   "description": "An abstract syntax tree designed for use with peg.js",
+  "repository": "github:aetherised/ghast.js",
+  "homepage": "https://github.com/aetherised/ghast.js",
+  "bugs": "https://github.com/aetherised/ghast.js/issues",
   "main": "lib/ghast.js",
+  "files": [
+    "lib"
+  ],
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "test": "spec"
   },
   "scripts": {
     "test": "jasmine"
@@ -12,7 +19,11 @@
   "keywords": [
     "ast", "abstract syntax tree", "syntax", "parser", "peg", "pegjs", "ghast"
   ],
-  "author": "aetherised",
+  "author": {
+    "name": "Abacus Lever",
+    "email": "aetherised@gmail.com",
+    "url": "https://github.com/aetherised"
+  },
   "license": "MIT",
   "devDependencies": {
     "jasmine": "^3.5.0"
