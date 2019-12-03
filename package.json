@@ -1,0 +1,17 @@
+{
+  "name": "ghast.js",
+  "version": "0.1.0",
+  "description": "An abstract syntax tree designed for use with peg.js",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ast"
+  ],
+  "author": "aetherised",
+  "license": "MIT"
+}
