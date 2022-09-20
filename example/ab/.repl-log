@@ -1,0 +1,16 @@
+tree.image
+tree.each("A", a=> a.each("B", b=> a.excise(b)))
+tree.image
+parser('a(b()b)').image
+parser('a(b()a)').image
+parser('a(b())').image
+parser('a(a())').image
+parser('a(a)').image
+parser('a(b)').image
+parser('a').image
+parser('a')
+tree.image
+tree
+tree.each("A", a=> a.each("B", b=> a.excise(b)))
+tree.each("A")
+tree
