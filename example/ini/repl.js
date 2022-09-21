@@ -14,7 +14,8 @@ const init =c=> {
   Object.assign(c, {
     parser,
     example,
-    tree: parser(example),
+    tree: parser.raw(example),
+    out: parser.parse(example),
   })
 }
 
@@ -25,7 +26,8 @@ function result(raw) {
 console.log('VARIABLES')
 console.log('  parser: Simple Ini parser')
 console.log('  example: string containing an example ini file')
-console.log('  tree: ghast.js AST as returned by calling parser(example)')
+console.log('  tree: ghast.js AST as returned by calling parser.raw(example)')
+console.log('  out: parser output as returned by calling parser.parse(example)')
 
 const r = repl.start({prompt: 'SINI> ', writer: result})
 r.setupHistory(`${__dirname}/.repl-log`, (e,r)=> {})
