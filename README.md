@@ -19,16 +19,20 @@ The `ast` function will be available in your grammar:
 ```pegjs
 {
   const ast = options.ast
+  const node = ast.classify('Node')
+  const val = ast.classify('Value')
 }
 
 Example = ex:Atom* { return ast('Example', ex) }
 
-Atom = A / B / [ \n]
-
-A = x:("a" Sub / "a") { return ast('A', x) }
-B = x:("b" Sub / "b") { return ast('B', x) }
-
+Atom = A / B / N / S / [ \n]
 Sub = "(" Atom* ")"
+
+A = x:("a" Sub / "a") { return node('A', x) }
+B = x:("b" Sub / "b") { return node('B', x) }
+N = n:$[0-9]+ { return val('Number', n) }
+S = "'" C "'"
+C = c:$[^']+ { return val('String', c) }
 ```
 
 The parser will now return a ghast AST which can be used to manipulate the
