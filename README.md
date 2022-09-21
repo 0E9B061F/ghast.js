@@ -14,7 +14,7 @@ const parser = peggy.generate(GRAMMAR)
 const tree = parser.parse(input, {ast})
 ```
 
-The `ast` function will now be available in your grammar:
+The `ast` function will be available in your grammar:
 
 ```pegjs
 {
@@ -31,11 +31,12 @@ B = x:("b" Sub / "b") { return ast('B', x) }
 Sub = "(" Atom* ")"
 ```
 
-Our parser will now return a ghast AST which we can use to manipulate the parsed syntax:
+The parser will now return a ghast AST which can be used to manipulate the
+parsed syntax:
 
 ```javascript
 const tree = parser.parse(input, {ast})
 tree.each('A', a=> a.each('B', b=> a.excise(b)))
 ```
 
-The added staement removes all B elements below an A element (but leaves top-level B elements intact).
+This will remove all B elements below an A element (but leaves top-level B elements intact).
