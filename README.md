@@ -13,7 +13,7 @@ const { ast } = require('ghast.js')
 
 const parser = peggy.generate(GRAMMAR)
 
-const tree = parser.parse(input, {ast})
+const tree = parser.parse(INPUT, {ast})
 ```
 
 The `ast` function will be available in your grammar:
@@ -41,7 +41,7 @@ The parser will now return a ghast AST which can be used to manipulate the
 parsed syntax:
 
 ```javascript
-const tree = parser.parse(input, {ast})
+const tree = parser.parse(INPUT, {ast})
 tree.each("A", a=> a.each({id: "B", depth: 0}, b=> b.remove()))
 ```
 
