@@ -1,4 +1,4 @@
-<p align="center">🏰</p>
+# <p align="center">🏰</p>
 
 **ghast.js** is an abstract syntax tree designed for use with peg.js/peggy.
 
