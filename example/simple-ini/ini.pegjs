@@ -4,24 +4,25 @@
 
 {
   const ast = options.ast
-  const tag = ast.classify('Tag')
 }
 
 Ini = g:Global s:Section* { return ast('Ini', g, s) }
 
-Section = t:Tag Feed+ p:Pairs { return ast('Section', p).attr({name: t.attrs.name}) }
+Section = t:Tag Feed+ p:Pairs {
+  return ast('Section', p).attr({name: t.attrs.name})
+}
 Global = p:Pairs { return ast('Global', p) }
 Pairs = (Pair Feed*)*
 
 Pair = WS* k:Ident WS* Assign WS* v:Value WS* {
-  return ast('Pair', k, v).attr({key: k.attrs.name, val: v.attrs.val})
+  return ast('Pair', k, v).attr({key: k.image, val: v.image})
 }
 Tag = WS* LB WS* k:Ident WS* RB WS* {
-  return ast('Tag', k).attr({name: k.attrs.name})
+  return ast('Tag', k).attr({name: k.image})
 }
 
-Ident = k:$[a-zA-Z0-9_-]+ { return ast('Ident', k).attr({name: k}) }
-Value = v:$[^\n]+ { return ast('Value', v).attr({val: v}) }
+Ident = k:$[a-zA-Z0-9_-]+ { return ast('Ident', k) }
+Value = v:$[^\n]+ { return ast('Value', v) }
 
 Assign = "="
 LB = "["
