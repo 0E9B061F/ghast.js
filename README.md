@@ -1,5 +1,7 @@
 **ghast.js** is an abstract syntax tree designed for use with peg.js/peggy.
 
+<p align="center">🏰</p>
+
 # Usage
 
 To use **ghast** in a grammar file, create a parser and place the `ast` helper
