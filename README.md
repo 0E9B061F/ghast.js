@@ -36,7 +36,7 @@ parsed syntax:
 
 ```javascript
 const tree = parser.parse(input, {ast})
-tree.each("A", a=> a.each("B", b=> b.excise()), {depth: 0})
+tree.each("A", a=> a.each({id: "B", depth: 0}, b=> b.remove()))
 ```
 
 This will remove all B elements below an A element (but leaves top-level B elements intact).
