@@ -75,30 +75,6 @@ describe("ghast.js", function() {
     expect(s2n6.goUp).toBe(p1s2)
     expect(s2n6.goDown).toBe(s2n6)
   })
-  it("is sequencable", function() {
-    const a1 = ast('Test', 'a1')
-    const b1 = ast('Test', 'b1')
-    const b2 = ast('Test', 'b2')
-    const b3 = ast('Test', b1,b2)
-    expect(a1.sequence).toEqual([a1])
-    expect(b3.sequence).toEqual([b3,b1,b2])
-    expect(tree.sequence).toEqual([
-      tree,
-      p1s1,
-      s1n1, s1n2, s1n3, s1n4, s1n5, s1n6,
-      p1n1,
-      p1s2,
-      s2n1, s2n2, s2n3, s2n4, s2n5, s2n6
-    ])
-
-    expect(a1.leafSequence).toEqual([a1])
-    expect(b3.leafSequence).toEqual([b1,b2])
-    expect(tree.leafSequence).toEqual([
-      s1n1, s1n2, s1n3, s1n4, s1n5, s1n6,
-      p1n1,
-      s2n1, s2n2, s2n3, s2n4, s2n5, s2n6
-    ])
-  })
   it("is queryable", function() {
     const t = trees.t1()
     expect(t.root.each({leaf: true})).toEqual([t.a6, t.b7, t.c6, t.d6, t.e4])
