@@ -1,4 +1,6 @@
 # <p align="center">🏰</p>
+[![npm](https://img.shields.io/npm/v/ghast.js.svg?style=flat-square)](https://www.npmjs.com/package/ghast.js)
+[![license](https://img.shields.io/github/license/0E9B061F/ghast.js.svg?style=flat-square)][license]
 
 **ghast.js** is an abstract syntax tree designed for use with peg.js/peggy.
 
@@ -80,3 +82,13 @@ node.remove(node.first())
 // self-remove a node:
 node.remove()
 ```
+
+# License
+
+Available under the terms of the [MIT license.][license]
+
+Copyright 2022 [0E9B061F / @0E9B061F][gh]
+
+
+[gh]:https://github.com/0E9B061F
+[license]:https://github.com/0E9B061F/ghast.js/blob/master/LICENSE
