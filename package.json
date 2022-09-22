@@ -1,6 +1,6 @@
 {
   "name": "ghast.js",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "An abstract syntax tree designed for use with peg.js",
   "repository": "github:0E9B061F/ghast.js",
   "homepage": "https://github.com/0E9B061F/ghast.js",
@@ -23,8 +23,7 @@
     "tree",
     "peg",
     "pegjs",
-    "peggy",
-    "ghast"
+    "peggy"
   ],
   "author": {
     "name": "0E9B061F",
