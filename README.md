@@ -58,6 +58,9 @@ node.each({leaf: true})           # return all descendant leaf nodes
 node.each({stem: true})           # return all non-leaf descendant nodes
 node.each({depth: 0})             # return all direct children of `node`
 node.each({depth: 1})             # return all direct children and grandchildren
+node.each({up: true})             # return all ancestors of `node`
+node.ancestor()                   # same as above
+node.climb(3)                     # return nth ancestor of `node`
 ```
 
 The following methods exist to modify the tree:
