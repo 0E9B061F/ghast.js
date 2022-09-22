@@ -66,22 +66,17 @@ node.climb(3)                     // return nth ancestor of `node`
 The following methods exist to modify the tree:
 
 ```javascript
-// transform nodes in-place:
-node.mutate({id: 'Foo', attrs: {x: 1}})
-node.mutate({tags: 'x y z', syntax: ['foo']})
-
 // replace a child node with another:
 node.replace(node.first(), ast('Test', 'test'))
 // self-replace a node with another:
 node.replace(ast('Test', 'test'))
 
+// transform nodes in-place:
+node.mutate({id: 'Foo', attrs: {x: 1}})
+node.mutate({tags: 'x y z', syntax: ['foo']})
+
 // remove a child node:
 node.remove(node.first())
 // self-remove a node:
 node.remove()
-
-// replace the parent node with self:
-node.supplant()
-// replace the nth parent node with self:
-node.supplant(2)
 ```
