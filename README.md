@@ -1,8 +1,41 @@
-# <p align="center">🏰</p>
+# 🏰 **ghast.js**
 
 **ghast.js** is an abstract syntax tree designed for use with peg.js/peggy.
 
 # Usage
+
+## Installation
+
+```sh
+npm install ghast.js
+```
+
+## The `ast` function
+
+`ghast.js` provides the `AST` class and `ast` helper function:
+
+```js
+const { AST, ast } = require('ghast.js')
+```
+
+You probably won't need to interact with the `AST` class itself. The hellper is
+a wrapper around `new AST()`. It takes an ID and zero-or-more syntax elements.
+A syntax element may be a string, another AST node or an array of these.
+Example:
+
+```js
+ast('Function',
+  ast('Ident', 'foo'),
+  "(", ast('String', '"', 'bar', '"'), ")"
+)
+```
+
+This will return a small tree representing a call to function `foo` with one
+string as its argument, `"bar"`.
+
+### The `classify` function
+
+## Using **ghast.js** in a Grammar File
 
 To use **ghast** in a grammar file, create a parser and place the `ast` helper
 function in the parser's options. For example:
