@@ -47,7 +47,7 @@ tree.each("A", a=> a.each({id: "B", depth: 0}, b=> b.remove()))
 
 The `each` method is used to query the tree:
 
-```
+```javascript
 node.each()                       # return all descendants of `node`
 node.each({self: true})           # return `node` and all of its descendants
 node.each('Section')              # return all descendants with id 'Section'
@@ -65,7 +65,7 @@ node.climb(3)                     # return nth ancestor of `node`
 
 The following methods exist to modify the tree:
 
-```
+```javascript
 # transform nodes in-place:
 node.mutate({id: 'Foo', attrs: {x: 1}})
 node.mutate({tags: 'x y z', syntax: ['foo']})
