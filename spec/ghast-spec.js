@@ -1,3 +1,5 @@
+'use strict'
+const trees = require('./trees.js')
 const {ast, AST } = require('../lib/ghast.js')
 
 const data = 'a complete sentence. a parting remark.'
@@ -96,5 +98,31 @@ describe("ghast.js", function() {
       p1n1,
       s2n1, s2n2, s2n3, s2n4, s2n5, s2n6
     ])
+  })
+  it("is queryable", function() {
+    const t = trees.t1()
+    expect(t.root.each({leaf: true})).toEqual([t.a6, t.b7, t.c6, t.d6, t.e4])
+    expect(t.root.each({id: 'T', first: true})).toEqual(t.c4)
+    expect(t.root.each({id: 'Z', first: true})).toEqual(t.e1)
+    expect(t.root.each({id: 'T'}).length).toEqual(3)
+    expect(t.root.each({id: 'A'}).length).toEqual(4)
+    expect(t.root.each({id: 'A', depth: 0}).length).toEqual(3)
+    expect(t.root.each({id: 'A', depth: 1}).length).toEqual(3)
+    expect(t.root.each({id: 'A', depth: 2}).length).toEqual(3)
+    expect(t.root.each({id: 'A', depth: 3}).length).toEqual(4)
+    expect(t.root.each({id: 'T', first: true}).each()).toEqual([t.c5, t.c6])
+    expect(t.root.each({id: 'T', first: true}).each({self: true})).toEqual([t.c4, t.c5, t.c6])
+    expect(t.root.each({tag: 'foo'})).toEqual([t.a1, t.c4, t.d3, t.d4, t.e1])
+    expect(t.root.each({tag: 'bar'})).toEqual([t.a6, t.b5, t.e4])
+    expect(t.root.each({tag: 'foo bar'})).toEqual([t.a1, t.a6, t.b5, t.c4, t.d3, t.d4, t.e1, t.e4])
+  })
+  it("its ancestors are queryable", function() {
+    const t = trees.t1()
+    expect(t.root.rightmostLeaf.each({up: true})).toEqual([t.e3, t.e2, t.e1, t.root])
+    expect(t.root.rightmostLeaf.each({up: true, stem: true})).toEqual([t.e3, t.e2, t.e1])
+    expect(t.root.rightmostLeaf.each({up: true, self: true})).toEqual([t.e4, t.e3, t.e2, t.e1, t.root])
+    expect(t.root.rightmostLeaf.each({up: true, depth: 1})).toEqual([t.e3, t.e2])
+    expect(t.root.rightmostLeaf.each({up: true, tag: 'foo'})).toEqual([t.e1])
+    expect(t.root.rightmostLeaf.each({up: true, id: 'U', first: true})).toEqual(t.e2)
   })
 })
