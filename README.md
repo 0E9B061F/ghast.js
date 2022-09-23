@@ -14,7 +14,7 @@ npm install ghast.js
 
 ## The `ast` function
 
-`ghast.js` provides the `AST` class and `ast` helper function:
+**ghast.js** provides the `AST` class and `ast` helper function:
 
 ```javascript
 const { AST, ast } = require('ghast.js')
@@ -91,6 +91,11 @@ const tree = parser.parse(INPUT, {ast})
 tree.each("A", a=> a.each({id: "B", depth: 0}, b=> b.remove()))
 ```
 
+## API
+
+Complete API documentation is coming. Below is an overview of the methods
+available:
+
 The `each` method is used to query the tree:
 
 ```javascript
@@ -125,6 +130,24 @@ node.mutate({tags: 'x y z', syntax: ['foo']})
 node.remove(node.first())
 // self-remove a node:
 node.remove()
+```
+
+Nodes can be tagged:
+
+```javascript
+node.tag('foo')         // tag a node
+node.tag('foo bar baz') // apply multiple tags at once
+node.hasTags            // true if the node has any tags
+node.hasTag('bar baz')  // true if the node has any of the given tags
+```
+
+Nodes have attributes:
+
+```javascript
+node.attr('a', 100)         // set a single attribute
+node.attr({foo: 1, bar: 2}) // set one or more attributes
+node.attrs.foo              // accessing attributes
+node.attrs['foo']           // accessing attributes
 ```
 
 # Examples
