@@ -1,4 +1,6 @@
 # 🏰 **ghast.js**
+[![npm][icon-ver]][pkg]
+[![license][icon-lic]][license]
 
 **ghast.js** is an abstract syntax tree designed for use with peg.js/peggy.
 
@@ -14,7 +16,7 @@ npm install ghast.js
 
 `ghast.js` provides the `AST` class and `ast` helper function:
 
-```js
+```javascript
 const { AST, ast } = require('ghast.js')
 ```
 
@@ -23,7 +25,7 @@ a wrapper around `new AST()`. It takes an ID and zero-or-more syntax elements.
 A syntax element may be a string, another AST node or an array of these.
 Example:
 
-```js
+```javascript
 ast('Function',
   ast('Ident', 'foo'),
   "(", ast('String', '"', 'bar', '"'), ")"
@@ -34,6 +36,17 @@ This will return a small tree representing a call to function `foo` with one
 string as its argument, `"bar"`.
 
 ### The `classify` function
+
+The `ast.classify` function takes a number of tags and returns a new helper
+function that automatically applies these tags to created nodes. For example:
+
+```javascript
+const foo = ast.classify('foo')
+const n1 = foo('Int', '55') // n1 will have the tag 'foo'
+
+const bar = foo.classify('bar')
+const n2 = bar('Str', 'foo') // n2 will be tagged 'foo bar'
+```
 
 ## Using **ghast.js** in a Grammar File
 
@@ -113,3 +126,26 @@ node.remove(node.first())
 // self-remove a node:
 node.remove()
 ```
+
+# Examples
+
+Two examples are provided:
+
+* [ab][ex-ab] - the nonsense example used in this README
+* [ini][ex-ini] - a simplistic ini parser
+
+# License
+
+Available under the terms of the [MIT license.][license]
+
+Copyright 2022 **[0E9B061F][gh]**
+
+
+[gh]:https://github.com/0E9B061F
+[license]:https://github.com/0E9B061F/ghast.js/blob/master/LICENSE
+[pkg]:https://www.npmjs.com/package/ghast.js
+[ex-ab]:https://github.com/0E9B061F/ghast.js/blob/master/example/ab
+[ex-ini]:https://github.com/0E9B061F/ghast.js/blob/master/example/ini
+
+[icon-ver]:https://img.shields.io/npm/v/ghast.js.svg?style=flat-square
+[icon-lic]:https://img.shields.io/github/license/0E9B061F/ghast.js.svg?style=flat-square
