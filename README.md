@@ -83,7 +83,7 @@ S = "'" C "'"
 C = c:$[^']+ { return val('String', c) }
 ```
 
-The parser will now return a ghast AST which can be used to manipulate the
+The parser will now return a **ghast** AST which can be used to manipulate the
 parsed syntax. This will remove all B elements below an A element:
 
 ```javascript
@@ -154,8 +154,8 @@ node.attrs['foo']           // accessing attributes
 
 Two examples are provided:
 
-* [ab][ex-ab] - the nonsense example used in this README
-* [ini][ex-ini] - a simplistic ini parser
+* **[ab][ex-ab]** - the nonsense example used in this README
+* **[ini][ex-ini]** - a simplistic ini parser
 
 # License
 
