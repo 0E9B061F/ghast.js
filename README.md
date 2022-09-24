@@ -1,4 +1,4 @@
-# 🏰 **ghast.js** v0.4.3 'SEPULCHRAVE'
+# 🏰 **ghast.js** v0.5.0 'FUCHSIA'
 [![npm][icon-ver]][pkg]
 [![license][icon-lic]][license]
 
@@ -20,7 +20,7 @@ npm install ghast.js
 const { AST, ast } = require('ghast.js')
 ```
 
-You probably won't need to interact with the `AST` class itself. The hellper is
+You probably won't need to interact with the `AST` class itself. The helper is
 a wrapper around `new AST()`. It takes an ID and zero-or-more syntax elements.
 A syntax element may be a string, another AST node or an array of these.
 Example:
@@ -155,6 +155,18 @@ node.attr('a', 100)         // set a single attribute
 node.attr({foo: 1, bar: 2}) // set one or more attributes
 node.attrs.foo              // accessing attributes
 node.attrs['foo']           // accessing attributes
+```
+
+The `read` method deep-reads attributes; it merges the attributes of this node
+with all of its descendants and returns the value of the given property:
+
+```javascript
+const node = ast('Function',
+  ast('Ident', 'foo').attr('foo', 1),
+  "(", ast('String', '"', 'bar', '"').attr('bar', 2), ")"
+)
+node.read('foo') // returns 1
+node.read('bar') // returns 2
 ```
 
 # Examples

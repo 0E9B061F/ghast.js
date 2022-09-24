@@ -1,7 +1,7 @@
 {
   "name": "ghast.js",
-  "version": "0.4.3",
-  "series": "SEPULCHRAVE",
+  "version": "0.5.0",
+  "series": "FUCHSIA",
   "description": "An abstract syntax tree designed for use with peg.js",
   "repository": "github:0E9B061F/ghast.js",
   "homepage": "https://github.com/0E9B061F/ghast.js",
