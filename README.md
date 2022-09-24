@@ -84,11 +84,11 @@ C = c:$[^']+ { return val('String', c) }
 ```
 
 The parser will now return a **ghast** AST which can be used to manipulate the
-parsed syntax. This will remove all B elements below an A element:
+parsed syntax. This will remove all B elements directly below an A element:
 
 ```javascript
 const tree = parser.parse(INPUT, {ast})
-tree.each("A", a=> a.each({id: "B", depth: 0}, b=> b.remove()))
+tree.select("A", {id: "B", depth: 0}, b=> b.remove())
 ```
 
 ## API
@@ -112,6 +112,13 @@ node.each({depth: 1})             // return all direct children and grandchildre
 node.each({up: true})             // return all ancestors of `node`
 node.ancestor()                   // same as above
 node.climb(3)                     // return nth ancestor of `node`
+```
+
+The `select` method creates complex selections from multiple `each` queries,
+similar to CSS selectors. The following is similar to `A .foo > B`:
+
+```javascript
+node.select('A', {tag: 'foo'}, {id: 'B', depth: 0})
 ```
 
 The following methods exist to modify the tree:

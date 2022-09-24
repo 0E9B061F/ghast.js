@@ -91,6 +91,7 @@ describe("ghast.js", function() {
     expect(t.root.each({tag: 'foo'})).toEqual([t.a1, t.c4, t.d3, t.d4, t.e1])
     expect(t.root.each({tag: 'bar'})).toEqual([t.a6, t.b5, t.e4])
     expect(t.root.each({tag: 'foo bar'})).toEqual([t.a1, t.a6, t.b5, t.c4, t.d3, t.d4, t.e1, t.e4])
+    expect(t.root.each({id: 'T', tag: 'foo'})).toEqual([t.c4])
   })
   it("its ancestors are queryable", function() {
     const t = trees.t1()
@@ -104,6 +105,13 @@ describe("ghast.js", function() {
     expect(rm.each({up: true, id: 'U', first: true})).toEqual(t.e2)
     expect(rm.each({up: true, last: true, depth: 2})).toEqual(t.e1)
     expect(rm.climb(2)).toEqual(t.e1)
+  })
+  it("supports complex selections", function() {
+    const t = trees.t1()
+    expect(t.root.select({id: 'T', tag: 'foo'}, 'V')).toEqual([t.c6])
+    expect(t.root.select('A', 'V')).toEqual([t.b7, t.c6])
+    expect(t.root.select({tag: 'foo'}, 'C')).toEqual([t.a3, t.d6])
+    expect(t.root.select('T', {tag: 'foo'}, 'C')).toEqual([t.d6])
   })
   it("is mutatable", function() {
     const t = trees.t1()
