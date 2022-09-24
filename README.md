@@ -1,4 +1,4 @@
-# 🏰 **ghast.js**
+# 🏰 **ghast.js** v0.4.3 'SEPULCHRAVE'
 [![npm][icon-ver]][pkg]
 [![license][icon-lic]][license]
 
