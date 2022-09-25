@@ -1,4 +1,4 @@
-# 🏰 **ghast.js** v0.5.0 'FUCHSIA'
+# 🏰 **ghast.js** v0.5.1 'FUCHSIA'
 [![npm][icon-ver]][pkg]
 [![license][icon-lic]][license]
 
@@ -102,16 +102,19 @@ The `each` method is used to query the tree:
 ```javascript
 node.each()                       // return all descendants of `node`
 node.each({self: true})           // return `node` and all of its descendants
-node.each('Section')              // return all descendants with id 'Section'
+node.each('Section')              // return all descendants with id `Section`
 node.each({id: 'Section'})        // same as above
-node.each({tag: 'val key'})       // return all descendants tagged 'val' or 'key'
-node.each({id: 'A', first: true}) // return the first descendant with id 'A'
+node.each({id: 'X', tag: 'y'})    // return all descendants with both id `X` and tag `y`
+node.each({tag: 'val key'})       // return all descendants tagged `val` or `key`
+node.each({id: 'A', first: true}) // return the first descendant with id `A`
 node.each({leaf: true})           // return all descendant leaf nodes
 node.each({stem: true})           // return all non-leaf descendant nodes
 node.each({depth: 0})             // return all direct children of `node`
 node.each({depth: 1})             // return all direct children and grandchildren
 node.each({up: true})             // return all ancestors of `node`
 node.ancestor()                   // same as above
+node.each({up: true, tag: 'x'})   // return all ancestors of `node` tagged `x`
+node.ancestor({tag: 'x'})         // same as above
 node.climb(3)                     // return nth ancestor of `node`
 ```
 
@@ -146,7 +149,8 @@ Nodes can be tagged:
 node.tag('foo')         // tag a node
 node.tag('foo bar baz') // apply multiple tags at once
 node.hasTags            // true if the node has any tags
-node.hasTag('bar baz')  // true if the node has any of the given tags
+node.hasTag('foo')      // true if the node has the tag `foo`
+node.hasTag('bar baz')  // true if the node has all of the given tags
 ```
 
 Nodes have attributes:
