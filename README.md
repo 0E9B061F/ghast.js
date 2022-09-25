@@ -2,7 +2,8 @@
 [![npm][icon-ver]][pkg]
 [![license][icon-lic]][license]
 
-**ghast.js** is an abstract syntax tree designed for use with peg.js/peggy.
+**ghast.js** is an abstract syntax tree designed for use with
+[Peggy][peggy]/[PEG.js][pegjs].
 
 # Usage
 
@@ -188,6 +189,9 @@ Copyright 2022 **[0E9B061F][gh]**
 [pkg]:https://www.npmjs.com/package/ghast.js
 [ex-ab]:https://github.com/0E9B061F/ghast.js/blob/master/example/ab
 [ex-ini]:https://github.com/0E9B061F/ghast.js/blob/master/example/ini
+
+[peggy]:https://github.com/peggyjs/peggy
+[pegjs]:https://github.com/pegjs/pegjs
 
 [icon-ver]:https://img.shields.io/npm/v/ghast.js.svg?style=flat-square
 [icon-lic]:https://img.shields.io/github/license/0E9B061F/ghast.js.svg?style=flat-square
