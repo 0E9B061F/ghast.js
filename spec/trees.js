@@ -1,6 +1,6 @@
 'use strict'
 
-const {ast, AST } = require('../lib/ghast.js')
+const { ast, AST } = require('../lib/ghast.js')
 
 const t1 =()=> {
   const t = {}

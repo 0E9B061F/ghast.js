@@ -1,5 +1,5 @@
 {
-  const ast = options.ast
+  const ast = options.ast.locate(location)
   const node = ast.classify('Node')
   const val = ast.classify('Value')
 }

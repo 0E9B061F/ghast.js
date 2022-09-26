@@ -1,6 +1,7 @@
 'use strict'
 const trees = require('./trees.js')
-const {ast, AST } = require('../lib/ghast.js')
+const { ast, AST } = require('../lib/ghast.js')
+const parser = require('../example/ab/parser.js')
 
 const data = 'a complete sentence. a parting remark.'
 
@@ -174,5 +175,15 @@ describe("ghast.js", function() {
     expect(t.root.read('x1')).toBe(100)
     expect(t.a1.read('x1')).toBe(1)
     expect(t.root.read('x2')).toBe(3)
+  })
+  it("it captures location data", function() {
+    let t = parser("a(b(77) b('foo bar baz'))\n424242 a(\n1 2 3\n)")
+    t = t.each().map(x=> [x.location.start.offset, x.location.end.offset])
+    expect(t).toEqual([
+      [0,25],  [2,7],   [4,6],
+      [8,24],  [11,22], [26,32],
+      [33,43], [36,37], [38,39],
+      [40,41]
+    ])
   })
 })

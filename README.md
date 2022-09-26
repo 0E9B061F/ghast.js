@@ -1,4 +1,4 @@
-# 🏰 **ghast.js** v0.5.1 'FUCHSIA'
+# 🏰 **ghast.js** v0.5.2 'FUCHSIA'
 [![npm][icon-ver]][pkg]
 [![license][icon-lic]][license]
 
@@ -49,6 +49,23 @@ const bar = foo.classify('bar')
 const n2 = bar('Str', 'foo') // n2 will be tagged 'foo bar'
 ```
 
+### The `locate` function
+
+`ast.locate` takes a location function and returns a new helper
+function that automatically adds location data to any created nodes. In a
+grammar you would use it like this:
+
+```pegjs
+{
+  const ast = options.ast.locate(location)
+}
+```
+
+Any created nodes will capture location data from the rule where they're
+created, available as `node.location`. Note that all nodes created in an action
+will share the same location information; to get information on a portion of the
+match, create another rule for just that portion.
+
 ## Using **ghast.js** in a Grammar File
 
 To use **ghast** in a grammar file, create a parser and place the `ast` helper
@@ -67,7 +84,7 @@ The `ast` function will be available in your grammar:
 
 ```pegjs
 {
-  const ast = options.ast
+  const ast = options.ast.locate(location)
   const node = ast.classify('Node')
   const val = ast.classify('Value')
 }
@@ -172,6 +189,13 @@ const node = ast('Function',
 )
 node.read('foo') // returns 1
 node.read('bar') // returns 2
+```
+
+Location data for a node can be set with `loc`:
+
+```javascript
+node.loc({start: 1, end: 2})
+node.location // read set location data
 ```
 
 # Examples
