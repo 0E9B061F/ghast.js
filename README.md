@@ -1,4 +1,4 @@
-# 🏰 **ghast.js** v0.5.2 'FUCHSIA'
+# 🏰 **ghast.js** v0.6.0 'FLAY'
 [![npm][icon-ver]][pkg]
 [![license][icon-lic]][license]
 
@@ -140,6 +140,18 @@ similar to CSS selectors. The following is similar to `A .foo > B`:
 
 ```javascript
 node.select('A', {tag: 'foo'}, {id: 'B', depth: 0})
+```
+
+The `when` method is used to visit nodes. Each visitor is an array of
+queries followed by a callback which will be called for each node
+matching any of its associated queries:
+
+```javascript
+node.when(
+  [{id: 'A', tag: 'foo'}, n=> n.foo()],
+  ['T', 'V', n=> n.bar()],
+  [{tag: 'bar'}, {leaf: true}, n=> n.baz()],
+)
 ```
 
 The following methods exist to modify the tree:

@@ -186,4 +186,18 @@ describe("ghast.js", function() {
       [40,41]
     ])
   })
+  it("it supports visitors", function() {
+    const t = trees.t1()
+    const a1 = []
+    const a2 = []
+    const a3 = []
+    t.root.when(
+      [{id: 'A', tag: 'foo'}, n=> a1.push(n)],
+      ['T', 'V', n=> a2.push(n)],
+      [{tag: 'bar'}, {leaf: true}, n=> a3.push(n)],
+    )
+    expect(a1).toEqual([t.a1, t.d4])
+    expect(a2).toEqual([t.b7, t.c4, t.c6, t.d1, t.d3, t.e3, t.e4])
+    expect(a3).toEqual([t.a6, t.b5, t.b7, t.c6, t.d6, t.e4])
+  })
 })

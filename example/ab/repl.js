@@ -7,6 +7,7 @@ const parser = require('./parser.js')
 const fs = require('fs')
 const path = require('path')
 const { ast } = require('../../lib/ghast.js')
+const traversal = require('../../lib/traversal.js')
 const trees = require('../../spec/trees.js')
 
 const example = fs.readFileSync(path.join(__dirname, 'example.ab'), {encoding: 'utf-8'})
@@ -21,6 +22,7 @@ const init =c=> {
     tree: parser(example),
     trees,
     t1: trees.t1(),
+    ...traversal,
   })
 }
 
