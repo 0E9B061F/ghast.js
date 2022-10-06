@@ -1,0 +1,22 @@
+{
+  "plugins": ["plugins/markdown"],
+  "source": {
+    "include": ["."],
+    "exclude": ["node_modules", "spec", "docs"]
+  },
+  "opts": {
+    "recurse": true,
+    "readme": "README.md",
+    "encoding": "utf8",
+    "private": false,
+    "lenient": true,
+    "destination": "./docs",
+    "template": "node_modules/minami"
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": true,
+    "useLongnameInNav": false,
+    "showInheritedInNav": true
+  }
+}
