@@ -231,16 +231,16 @@ Copyright 2022 **[0E9B061F][gh]**
 [pkg]:https://www.npmjs.com/package/ghast.js
 [ex-ab]:https://github.com/0E9B061F/ghast.js/blob/master/example/ab
 [ex-ini]:https://github.com/0E9B061F/ghast.js/blob/master/example/ini
-[docs]:https://0e9b061f.github.io/ghast.js
+[docs]:https://0e9b061f.github.io/docs/ghast.js
 
-[doc-AST]:https://0e9b061f.github.io/ghast.js/AST.html
-[doc-helper]:https://0e9b061f.github.io/ghast.js/global.html#ast
-[doc-each]:https://0e9b061f.github.io/ghast.js/AST.html#each
-[doc-select]:https://0e9b061f.github.io/ghast.js/AST.html#select
-[doc-when]:https://0e9b061f.github.io/ghast.js/AST.html#when
-[doc-read]:https://0e9b061f.github.io/ghast.js/AST.html#read
-[doc-loc]:https://0e9b061f.github.io/ghast.js/AST.html#loc
-[doc-trv]:https://0e9b061f.github.io/ghast.js/Traverse.html
+[doc-AST]:https://0e9b061f.github.io/docs/ghast.js/AST.html
+[doc-helper]:https://0e9b061f.github.io/docs/ghast.js/global.html#ast
+[doc-each]:https://0e9b061f.github.io/docs/ghast.js/AST.html#each
+[doc-select]:https://0e9b061f.github.io/docs/ghast.js/AST.html#select
+[doc-when]:https://0e9b061f.github.io/docs/ghast.js/AST.html#when
+[doc-read]:https://0e9b061f.github.io/docs/ghast.js/AST.html#read
+[doc-loc]:https://0e9b061f.github.io/docs/ghast.js/AST.html#loc
+[doc-trv]:https://0e9b061f.github.io/docs/ghast.js/Traverse.html
 
 [peggy]:https://github.com/peggyjs/peggy
 [pegjs]:https://github.com/pegjs/pegjs
@@ -248,5 +248,5 @@ Copyright 2022 **[0E9B061F][gh]**
 [icon-ver]:https://img.shields.io/github/package-json/v/0E9B061F/ghast.js.svg?style=flat-square&logo=github&color=%236e7fd2
 [icon-ser]:https://img.shields.io/badge/dynamic/json?color=%236e7fd2&label=series&prefix=%27&query=series&suffix=%27&url=https%3A%2F%2Fraw.githubusercontent.com%2F0E9B061F%2Fghast.js%2Fmaster%2Fpackage.json&style=flat-square
 [icon-lic]:https://img.shields.io/github/license/0E9B061F/ghast.js.svg?style=flat-square&color=%236e7fd2
-[icon-doc]:https://img.shields.io/badge/dynamic/json?color=%236e7fd2&label=docs&prefix=v&query=version&url=https%3A%2F%2F0e9b061f.github.io%2Fghast.js%2Fpackage.json
+[icon-doc]:https://img.shields.io/badge/dynamic/json?color=%236e7fd2&label=docs&prefix=v&query=version&url=https%3A%2F%2F0e9b061f.github.io%2Fdocs%2Fghast.js%2Fpackage.json
 [icon-npm]:https://img.shields.io/npm/v/ghast.js.svg?style=flat-square&logo=npm&color=%23de2657
