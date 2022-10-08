@@ -1,5 +1,5 @@
-# 🏰 **ghast.js** v0.6.1 'FLAY'
-[![Version][icon-ver]][gh]
+# 🏰 **ghast.js** v0.6.2 'FLAY'
+[![Version][icon-ver]][repo]
 [![Series][icon-ser]][gh]
 [![License][icon-lic]][license]
 [![Documentation][icon-doc]][docs]<br/>
@@ -227,6 +227,7 @@ Copyright 2022 **[0E9B061F][gh]**
 
 
 [gh]:https://github.com/0E9B061F
+[repo]:https://github.com/0E9B061F/ghast.js
 [license]:https://github.com/0E9B061F/ghast.js/blob/master/LICENSE
 [pkg]:https://www.npmjs.com/package/ghast.js
 [ex-ab]:https://github.com/0E9B061F/ghast.js/blob/master/example/ab
