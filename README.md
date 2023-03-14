@@ -144,7 +144,7 @@ similar to CSS selectors. The following is similar to `A .foo > B`:
 node.select('A', {tag: 'foo'}, {id: 'B', depth: 0})
 ```
 
-The [`whem`][doc-when] method is used to visit nodes. Each visitor is an array of
+The [`when`][doc-when] method is used to visit nodes. Each visitor is an array of
 queries followed by a callback which will be called for each node
 matching any of its associated queries:
 
