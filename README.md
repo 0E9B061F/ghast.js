@@ -1,4 +1,4 @@
-# 🏰 **ghast.js** v0.6.2 'FLAY'
+# 🏰 **ghast.js** v0.6.4 'FLAY'
 [![Version][icon-ver]][repo]
 [![Series][icon-ser]][gh]
 [![License][icon-lic]][license]
@@ -223,7 +223,7 @@ Two examples are provided:
 
 Available under the terms of the [MIT license.][license]
 
-Copyright 2022 **[0E9B061F][gh]**
+Copyright 2023 **[0E9B061F][gh]**
 
 
 [gh]:https://github.com/0E9B061F
