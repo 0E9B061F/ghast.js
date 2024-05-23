@@ -16,7 +16,8 @@
   },
   "scripts": {
     "test": "jasmine",
-    "doc": "jsdoc -c jsdoc.json; cp package.json docs"
+    "doc": "jsdoc -c jsdoc.json; cp package.json docs",
+    "doc:serve": "http-server docs"
   },
   "keywords": [
     "ast",
@@ -34,10 +35,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "jasmine": "^3.5.0",
-    "jsdoc": "^3.6.11",
-    "minami": "^1.2.3",
-    "peggy": "^2.0.1"
-  },
-  "dependencies": {}
+    "docdash": "^2.0.2",
+    "http-server": "^14.1.1",
+    "jasmine": "^5.1.0",
+    "jsdoc": "^4.0.3",
+    "peggy": "^4.0.2"
+  }
 }
