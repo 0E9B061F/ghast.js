@@ -2,7 +2,8 @@
 [![Version][icon-ver]][repo]
 [![Series][icon-ser]][gh]
 [![License][icon-lic]][license]
-[![Documentation][icon-doc]][docs]<br/>
+[![Documentation][icon-doc]][docs]
+[![Maintenance][icon-mnt]][commits]<br/>
 [![NPM][icon-npm]][pkg]
 
 **ghast.js** is an abstract syntax tree designed for use with
@@ -228,6 +229,7 @@ Copyright 2023 **[0E9B061F][gh]**
 
 [gh]:https://github.com/0E9B061F
 [repo]:https://github.com/0E9B061F/ghast.js
+[commits]:https://github.com/0E9B061F/ghast.js/commits/main
 [license]:https://github.com/0E9B061F/ghast.js/blob/master/LICENSE
 [pkg]:https://www.npmjs.com/package/ghast.js
 [ex-ab]:https://github.com/0E9B061F/ghast.js/blob/master/example/ab
@@ -251,3 +253,4 @@ Copyright 2023 **[0E9B061F][gh]**
 [icon-lic]:https://img.shields.io/github/license/0E9B061F/ghast.js.svg?style=flat-square&color=%236e7fd2
 [icon-doc]:https://img.shields.io/badge/dynamic/json?color=%236e7fd2&label=docs&prefix=v&query=version&url=https%3A%2F%2F0e9b061f.github.io%2Fdocs%2Fghast.js%2Fpackage.json
 [icon-npm]:https://img.shields.io/npm/v/ghast.js.svg?style=flat-square&logo=npm&color=%23de2657
+[icon-mnt]:https://img.shields.io/maintenance/yes/2024.svg?style=flat-square
