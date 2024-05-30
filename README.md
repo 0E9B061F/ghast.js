@@ -229,7 +229,7 @@ Copyright 2023 **[0E9B061F][gh]**
 
 [gh]:https://github.com/0E9B061F
 [repo]:https://github.com/0E9B061F/ghast.js
-[commits]:https://github.com/0E9B061F/ghast.js/commits/main
+[commits]:https://github.com/0E9B061F/ghast.js/commits/master
 [license]:https://github.com/0E9B061F/ghast.js/blob/master/LICENSE
 [pkg]:https://www.npmjs.com/package/ghast.js
 [ex-ab]:https://github.com/0E9B061F/ghast.js/blob/master/example/ab
