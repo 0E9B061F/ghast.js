@@ -6,7 +6,10 @@
   "license": "MIT",
   "homepage": "https://github.com/0E9B061F/ghast.js",
   "bugs": "https://github.com/0E9B061F/ghast.js/issues",
-  "repository": "github:0E9B061F/ghast.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0E9B061F/ghast.js.git"
+  },
   "author": {
     "name": "0E9B061F",
     "email": "0E9B061F@protonmail.com",
