@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@0e9b061f/mkv':
+        specifier: ^0.1.0
+        version: 0.1.0
       docdash:
         specifier: ^2.0.2
         version: 2.0.2
@@ -25,6 +28,10 @@ importers:
         version: 4.0.2
 
 packages:
+
+  '@0e9b061f/mkv@0.1.0':
+    resolution: {integrity: sha512-IXKd8ZsZk3Ur45w3IzNRfrMZNZIsOamnmeXiWlIRIZQ62x8n0JMd0h4KiWJvv0ilfEYo6AD0nC3WDMofLyt8PQ==}
+    hasBin: true
 
   '@babel/helper-string-parser@7.24.1':
     resolution: {integrity: sha512-2ofRCjnnA9y+wk8b9IAREroeUP02KHp431N2mhKniy2yKIDKpbrHv9eXwm8cBeWQYcJmzv5qKCu65P47eCF7CQ==}
@@ -478,6 +485,8 @@ packages:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
 snapshots:
+
+  '@0e9b061f/mkv@0.1.0': {}
 
   '@babel/helper-string-parser@7.24.1': {}
 

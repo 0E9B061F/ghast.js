@@ -1,4 +1,4 @@
-# 🏰 **ghast.js** v0.6.7 'FLAY'
+# :european_castle: **ghast.js** AST v0.6.8 'FLAY'
 [![Version][icon-ver]][repo]
 [![Series][icon-ser]][gh]
 [![License][icon-lic]][license]

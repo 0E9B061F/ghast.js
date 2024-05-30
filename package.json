@@ -1,7 +1,11 @@
 {
   "name": "ghast.js",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "series": "FLAY",
+  "mkv": {
+    "before": ":european_castle:",
+    "after": "AST"
+  },
   "description": "An abstract syntax tree designed for use with peg.js",
   "license": "MIT",
   "homepage": "https://github.com/0E9B061F/ghast.js",
@@ -26,7 +30,8 @@
   "scripts": {
     "test": "jasmine",
     "doc": "jsdoc -c jsdoc.json; cp package.json docs",
-    "doc:serve": "http-server docs"
+    "doc:serve": "http-server docs",
+    "mkv": "mkv"
   },
   "keywords": [
     "ast",
@@ -38,6 +43,7 @@
     "peggy"
   ],
   "devDependencies": {
+    "@0e9b061f/mkv": "^0.1.0",
     "docdash": "^2.0.2",
     "http-server": "^14.1.1",
     "jasmine": "^5.1.0",
